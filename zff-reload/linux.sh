@@ -63,6 +63,27 @@ fi
 
 echo "Starting install Zff-Reload..."
 
+if [ "$1" = '-u' ]
+then
+    if [ -d "$ZFFDIR" ]
+    then
+        echo "We will do overwrite \"$ZFFDIR\" and \"$ZFFBIN\", are you sure?"
+        echo -n "[y/n]> "
+        read -r -n1 x
+        echo "%"
+        if [ "$x" = "y" ] || [ "$x" = "Y" ]
+        then
+            echo "You said yes!"
+            # IF something to save, put it here.
+            rm -rf "$ZFFDIR"
+            rm -rf "$ZFFBIN"
+        else
+            echo "You said no, Abort!"
+            exit
+        fi
+    fi
+fi
+
 echo "Installing application file to $ZFFDIR..."
 mkdir -p "$ZFFDIR"
 git clone https://github.com/ohzff/Zff-Reload.git "$ZFFDIR"

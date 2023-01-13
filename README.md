@@ -30,6 +30,15 @@ Then, type `ZFFDIR=**LibPath** ZFFBIN=**BinPath** ./linux.sh`.
 > e.g.
 > 
 > ```bash
-> ZFFDIR=/usr/share ZFFBIN=/usr/bin ./linux.sh
+> sudo ZFFDIR=/usr/share ZFFBIN=/usr/bin ./linux.sh
 > ```
 
+**UPDATE**
+
+Run this script and add flag `-u`.
+
+> e.g.
+> 
+> ```bash
+> sudo ZFFDIR=/usr/share ZFFBIN=/usr/bin ./linux.sh -u
+> ```
