@@ -8,6 +8,11 @@ Download `linux.sh` from folder `zff-reload/`.
 
 ```bash
 curl https://raw.githubusercontent.com/ohzff/install/main/zff-reload/linux.sh > linux.sh
+```
+
+Change file modes to `execute bits`.
+
+```bash
 chmod +x ./linux.sh
 ```
 
