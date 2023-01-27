@@ -8,6 +8,7 @@ Download `linux.sh` from folder `zff-reload/`.
 
 ```bash
 curl https://raw.githubusercontent.com/ohzff/install/main/zff-reload/linux.sh > linux.sh
+chmod +x ./linux.sh
 ```
 
 **START INSTALL**
@@ -23,15 +24,18 @@ Check your system and choose one you want to install.
 | Linux & macOS **[Install to here]** | PATH TO HERE | PATH TO HERE |
 | Windows | Use exe | |
 
-> We recommend you to use absolute path.
+> you must use absolute path.
 
-Then, type `ZFFDIR=**LibPath** ZFFBIN=**BinPath** ./linux.sh`.
+Then, type `./linux.sh`.
 
-> e.g.
-> 
-> ```bash
-> sudo ZFFDIR=/usr/share ZFFBIN=/usr/bin ./linux.sh
-> ```
+```bash
+$ ./linux.sh                                   # Start the installation
+
+Where do you want to put the game resources?
+ read (/usr/share/) > **LibPath**              # Input the Lib path here.
+Where do you want to put the binary file?
+ read (/usr/bin/) > **BinPath**                # Input the bin path here.
+```
 
 **UPDATE**
 
@@ -40,5 +44,5 @@ Run this script and add flag `-u`.
 > e.g.
 > 
 > ```bash
-> sudo ZFFDIR=/usr/share ZFFBIN=/usr/bin ./linux.sh -u
+> sudo ./linux.sh -u
 > ```

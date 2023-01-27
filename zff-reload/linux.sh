@@ -26,6 +26,8 @@ then
     exit 1
 fi
 
+echo "Configuring installation..."
+
 if [ -z "$ZFFDIR" ]
 then
     ZFFDIR="/usr/share/"
@@ -33,6 +35,24 @@ fi
 if [ -z "$ZFFBIN" ]
 then
     ZFFBIN="/usr/bin/"
+fi
+
+echo "Where do you want to put the game resources?"
+echo -n " read ($ZFFDIR) > "
+read -r tmp
+
+if [ -n "$tmp" ]
+then
+    ZFFDIR="$tmp"
+fi
+
+echo "Where do you want to put the binary file?"
+echo -n " read ($ZFFBIN) > "
+read -r tmp
+
+if [ -n "$tmp" ]
+then
+    ZFFBIN="$tmp"
 fi
 
 if [ ! -w "$ZFFDIR" ]
@@ -61,6 +81,23 @@ else
     ZFFBIN="${ZFFBIN}zff"
 fi
 
+echo "Please check the settings:"
+echo "Zff binary file:  $ZFFBIN"
+echo "Zff resources:    $ZFFDIR"
+echo "- Notice: It must be an absolute path!!!"
+echo "Continue? (y/n)"
+echo -n " read> "
+read -n1 -r tmp
+echo " "
+
+if [ "$tmp" = "y" ] || [ "$tmp" = "Y" ]
+then
+    echo "You said yes!"
+else
+    echo "You said no! Exit..."
+    exit
+fi
+
 echo "Starting install Zff-Reload..."
 
 if [ "$1" = '-u' ]
@@ -78,7 +115,7 @@ then
             rm -rf "$ZFFDIR"
             rm -rf "$ZFFBIN"
         else
-            echo "You said no, Abort!"
+            echo "You said no! Abort!"
             exit
         fi
     fi
