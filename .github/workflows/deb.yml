@@ -21,7 +21,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run script
-      - run: cd zff-reload/ && bash pack-deb.sh
+        run: cd zff-reload/ && bash pack-deb.sh
       
       - uses: actions/upload-artifact@v3
         with:
