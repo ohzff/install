@@ -23,6 +23,11 @@ jobs:
       - name: Run script
         run: cd zff-reload/ && bash pack-deb.sh
       
+      - name: Test package
+        run: |
+          dpkg -i ./zff-reload/zff.deb
+          zff version
+      
       - uses: actions/upload-artifact@v3
         with:
           name: Zff-Linux.deb
