@@ -11,7 +11,7 @@ cd ../../../../
 
 # generate control
 cat <<EOX > "./deb/DEBIAN/control"
-Package: zff_reload
+Package: zff-reload
 Version: $version
 Description: New Zff, the lightest adventure game.
 Maintainer: Jiayi Wu <wjy@516wjy.xyz>
