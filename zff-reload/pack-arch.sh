@@ -45,15 +45,14 @@ sha256sums=('SKIP')
 # }
 
 build(){
-    ls
-    cd "\$pkgname-\$pkgver"
+    cd "Zff-Reload-\$pkgver"
     rm ./lib/system/data/DATA.hpp
     cp ./lib/system/data/DATA_usr.hpp ./lib/system/data/DATA.hpp
     g++ ./main.cpp -o zff -std=c++11 -pthread
 }
 
 package(){
-    cd "\$pkgname-\$pkgver"
+    cd "Zff-Reload-\$pkgver"
     cp "./zff" "$pkgdir/usr/bin/zff"
     mkdir -p "$pkgdir/usr/share/zff_reload"
     cp -r "./usr" "$pkgdir/usr/share/zff_reload/"
