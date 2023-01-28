@@ -53,6 +53,7 @@ build(){
 
 package(){
     cd "Zff-Reload-\$pkgver"
+    mkdir -p "\$pkgdir/usr/bin"
     cp "./zff" "\$pkgdir/usr/bin/zff"
     mkdir -p "\$pkgdir/usr/share/zff_reload"
     cp -r "./usr" "\$pkgdir/usr/share/zff_reload/"
