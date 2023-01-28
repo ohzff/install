@@ -9,7 +9,8 @@ version="$(git describe --tag)"
 cd ../
 
 # download source
-curl "https://github.com/ohzff/Zff-Reload/archive/refs/tags/$version.tar.gz" --output "./archlinux/zff-reload-$version.tar.gz"
+# curl "https://github.com/ohzff/Zff-Reload/archive/refs/tags/$version.tar.gz" --output "./archlinux/zff-reload-$version.tar.gz"
+wget "https://github.com/ohzff/Zff-Reload/archive/refs/tags/$version.tar.gz" -O "./archlinux/zff-reload-$version.tar.gz"
 
 cat <<EOX > "./archlinux/PKGBUILD"
 # Maintainer: Jiayi Wu <wjy@516wjy.xyz>
