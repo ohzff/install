@@ -37,14 +37,15 @@ source=("\$pkgname-\$pkgver.tar.gz")
 noextract=()
 sha256sums=('SKIP')
 
-prepare(){
-    if [ ! -d "\$pkgname-\$pkgver" ]
-    then
-        tar -xf "\$pkgname-\$pkgver.tar.gz"
-    fi
-}
+# prepare(){
+#     if [ ! -d "\$pkgname-\$pkgver" ]
+#     then
+#         tar -xf "\$pkgname-\$pkgver.tar.gz"
+#     fi
+# }
 
 build(){
+    ls
     cd "\$pkgname-\$pkgver"
     rm ./lib/system/data/DATA.hpp
     cp ./lib/system/data/DATA_usr.hpp ./lib/system/data/DATA.hpp
