@@ -9,9 +9,10 @@ version="$(git describe --tag)"
 cd ../
 
 # download source
-curl "https://github.com/ohzff/Zff-Reload/archive/refs/tags/$version.tar.gz" --output ./archlinux/zfftar.tar.gz
+curl "https://github.com/ohzff/Zff-Reload/archive/refs/tags/$version.tar.gz" --output "./archlinux/zff-reload-$version.tar.gz"
 
 cat <<EOX > "./archlinux/PKGBUILD"
+# Maintainer: Jiayi Wu <wjy@516wjy.xyz>
 pkgname='zff-reload'
 pkgver='$version'
 pkgrel=1
@@ -31,20 +32,20 @@ backup=()
 options=()
 install=
 changelog=
-source=('zfftar.tar.gz')
+source=('\$pkgname-\$pkgver.tar.gz')
 noextract=()
 sha256sums=('SKIP')
 
 build(){
     ls
-    cd "zfftar"
+    cd "\$pkgname-\$pkgver"
     rm ./lib/system/data/DATA.hpp
     cp ./lib/system/data/DATA_usr.hpp ./lib/system/data/DATA.hpp
     g++ ./main.cpp -o zff -std=c++11 -pthread
 }
 
 package(){
-    cd "zfftar"
+    cd "\$pkgname-\$pkgver"
     cp "./zff" "$pkgdir/usr/bin/zff"
     mkdir -p "$pkgdir/usr/share/zff_reload"
     cp -r "./usr" "$pkgdir/usr/share/zff_reload/"
