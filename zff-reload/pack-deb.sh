@@ -1,8 +1,5 @@
 #!/bin/bash
 
-echo "[DEBUG] Start path: $(pwd)"
-ls
-
 # clone to usr/share/zff_reload
 mkdir -p ./deb/usr/share/zff_reload
 git clone https://github.com/ohzff/Zff-Reload ./deb/usr/share/zff_reload
@@ -12,15 +9,12 @@ cd ./deb/usr/share/zff_reload
 version="$(git describe --tag)"
 cd ../../../../
 
-echo "[DEBUG] Now path: $(pwd)"
-ls
-
 # generate control
 cat <<EOX > "./deb/DEBIAN/control"
 Package: zff_reload
 Version: $version
 Description: New Zff, the lightest adventure game.
-Maintainer: 5+1 <wjy@516wjy.xyz>
+Maintainer: Jiayi Wu <wjy@516wjy.xyz>
 Section: game
 Priority: extra
 Essential: no
