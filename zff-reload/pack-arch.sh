@@ -36,6 +36,7 @@ noextract=()
 sha256sums=('SKIP')
 
 build(){
+    ls
     cd "zfftar"
     rm ./lib/system/data/DATA.hpp
     cp ./lib/system/data/DATA_usr.hpp ./lib/system/data/DATA.hpp
