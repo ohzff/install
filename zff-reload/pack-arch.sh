@@ -53,11 +53,11 @@ build(){
 
 package(){
     cd "Zff-Reload-\$pkgver"
-    cp "./zff" "$pkgdir/usr/bin/zff"
-    mkdir -p "$pkgdir/usr/share/zff_reload"
-    cp -r "./usr" "$pkgdir/usr/share/zff_reload/"
-    cp "./LICENCE" "$pkgdir/usr/share/zff_reload/"
-    cp "./README.md" "$pkgdir/usr/share/zff_reload/"
+    cp "./zff" "\$pkgdir/usr/bin/zff"
+    mkdir -p "\$pkgdir/usr/share/zff_reload"
+    cp -r "./usr" "\$pkgdir/usr/share/zff_reload/"
+    cp "./LICENCE" "\$pkgdir/usr/share/zff_reload/"
+    cp "./README.md" "\$pkgdir/usr/share/zff_reload/"
 }
 EOX
 
