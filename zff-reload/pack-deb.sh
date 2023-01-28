@@ -19,7 +19,7 @@ Homepage: https://github.com/ohzff/Zff-Reload
 Section: game
 Priority: extra
 Essential: no
-Architecture: any
+Architecture: all
 Depends: g++
 EOX
 
