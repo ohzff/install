@@ -1,0 +1,3 @@
+#!/bin/bash
+
+g++ "/usr/share/zff_reload/main.cpp" -o "/usr/bin/zff" -std=c++11 -pthread
