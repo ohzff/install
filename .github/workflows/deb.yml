@@ -23,8 +23,7 @@ jobs:
       - name: Run script
       - run: cd zff-reload/ && bash pack-deb.sh
       
-      - name: Upload
-        uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v3
         with:
           name: Zff-Linux.deb
           path: ./zff-reload/zff.deb
