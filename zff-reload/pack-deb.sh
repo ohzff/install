@@ -20,6 +20,7 @@ cat <<EOX > "./deb/DEBIAN/control"
 Package: zff_reload
 Version: $version
 Description: New Zff, the lightest adventure game.
+Maintainer: 5+1 <wjy@516wjy.xyz>
 Section: game
 Priority: extra
 Essential: no
@@ -28,7 +29,7 @@ Depends: g++
 EOX
 
 # copyright
-cp ./deb/usr/share/zff_reload/LICENSE ./deb/DEBIAN/copyright
+cp ./deb/usr/share/zff_reload/LICENCE ./deb/DEBIAN/copyright
 
 # define file
 rm ./deb/usr/share/zff_reload/lib/system/data/DATA.hpp
