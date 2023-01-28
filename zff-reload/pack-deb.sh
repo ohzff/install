@@ -15,6 +15,7 @@ Package: zff-reload
 Version: $version
 Description: New Zff, the lightest adventure game.
 Maintainer: Jiayi Wu <wjy@516wjy.xyz>
+Homepage: https://github.com/ohzff/Zff-Reload
 Section: game
 Priority: extra
 Essential: no
@@ -29,5 +30,8 @@ cp ./deb/usr/share/zff_reload/LICENCE ./deb/DEBIAN/copyright
 rm ./deb/usr/share/zff_reload/lib/system/data/DATA.hpp
 cp ./deb/usr/share/zff_reload/lib/system/data/DATA_usr.hpp ./deb/usr/share/zff_reload/lib/system/data/DATA.hpp
 
-#dpkg
+# chmod
+chmod 755 ./deb/DEBIAN/postinst
+
+# dpkg
 dpkg -b ./deb zff.deb
