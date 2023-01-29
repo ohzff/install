@@ -29,7 +29,14 @@ jobs:
         with:
           pkgdir: ./zff-reload/archlinux
       
-      - uses: actions/upload-artifact@v3
+      - name: Upload zst
+        uses: actions/upload-artifact@v3
         with:
           name: Zff-archlinux
           path: ${{ steps.makepkg.outputs.pkgfile0 }}
+
+      - name: Upload PKGBUILD
+        uses: actions/upload-artifact@v3
+        with:
+          name: PKGBUILD
+          path: ./zff-reload/archlinux/PKGBUILD
