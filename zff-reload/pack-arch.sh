@@ -5,7 +5,8 @@ git clone https://github.com/ohzff/Zff-Reload ./tmp
 
 # gather information
 cd ./tmp
-version="$(git describe --tag)"
+fullversion="$(git describe --tag)"
+version="${fullversion%%-*}"
 cd ../
 
 # download source

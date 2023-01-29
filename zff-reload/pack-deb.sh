@@ -6,7 +6,8 @@ git clone https://github.com/ohzff/Zff-Reload ./deb/usr/share/zff_reload
 
 # gather information
 cd ./deb/usr/share/zff_reload
-version="$(git describe --tag)"
+fullversion="$(git describe --tag)"
+version="${fullversion%%-*}"
 cd ../../../../
 
 # generate control
