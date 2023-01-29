@@ -1,14 +1,24 @@
 #!/bin/bash
 
 # clone to usr/share/zff_reload
-mkdir -p ./deb/usr/share/zff_reload
-git clone https://github.com/ohzff/Zff-Reload ./deb/usr/share/zff_reload
+git clone https://github.com/ohzff/Zff-Reload ./tmp
 
 # gather information
-cd ./deb/usr/share/zff_reload
+cd ./tmp
 fullversion="$(git describe --tag)"
 version="${fullversion%%-*}"
-cd ../../../../
+cd ../
+
+# get source
+wget "https://github.com/ohzff/Zff-Reload/archive/refs/tags/$version.tar.gz" -O "./zff-reload-$version.tar.gz"
+tar -xf ./zff-reload-$version.tar.gz
+
+mkdir -p ./deb/usr/share/zff_reload
+cp -r "./lib" "./deb/usr/share/zff_reload/"
+cp -r "./usr" "./deb/usr/share/zff_reload/"
+cp "./main.cpp" "./deb/usr/share/zff_reload/"
+cp "./LICENCE" "./deb/usr/share/zff_reload/"
+cp "./README.md" "./deb/usr/share/zff_reload/"
 
 # generate control
 cat <<EOX > "./deb/DEBIAN/control"
@@ -35,4 +45,4 @@ cp ./deb/usr/share/zff_reload/lib/system/data/DATA_usr.hpp ./deb/usr/share/zff_r
 chmod 755 ./deb/DEBIAN/postinst
 
 # dpkg
-dpkg -b ./deb zff.deb
+dpkg -b ./deb Zff-Ubuntu-any.deb
