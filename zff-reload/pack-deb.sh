@@ -14,11 +14,11 @@ wget "https://github.com/ohzff/Zff-Reload/archive/refs/tags/$version.tar.gz" -O 
 tar -xf ./zff-reload-$version.tar.gz
 
 mkdir -p ./deb/usr/share/zff_reload
-cp -r "./lib" "./deb/usr/share/zff_reload/"
-cp -r "./usr" "./deb/usr/share/zff_reload/"
-cp "./main.cpp" "./deb/usr/share/zff_reload/"
-cp "./LICENCE" "./deb/usr/share/zff_reload/"
-cp "./README.md" "./deb/usr/share/zff_reload/"
+cp -r "./Zff-Reload-$version/lib" "./deb/usr/share/zff_reload/"
+cp -r "./Zff-Reload-$version/usr" "./deb/usr/share/zff_reload/"
+cp "./Zff-Reload-$version/main.cpp" "./deb/usr/share/zff_reload/"
+cp "./Zff-Reload-$version/LICENCE" "./deb/usr/share/zff_reload/"
+cp "./Zff-Reload-$version/README.md" "./deb/usr/share/zff_reload/"
 
 # generate control
 cat <<EOX > "./deb/DEBIAN/control"
